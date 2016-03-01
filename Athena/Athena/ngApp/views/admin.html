@@ -1,0 +1,41 @@
+﻿
+<div class="APdesign">
+    <center>
+        <h1>Admin</h1>
+    </center><br /><br />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <table>
+                        <tr>
+                            <th class="text-center"><h3>Delete</h3></th>
+                        </tr>
+                        <tr ng-repeat="work in controller.works">
+                            <td>{{work.title}}</td>
+                            <td><button class="btn btn-success" ng-click="controller.deleteWork(work.id)">Delete</button></td>
+                        </tr>
+                    </table>
+                    <!--<ul class="list-unstyled">
+                        <li ng-repeat="work in controller.works">{{work.title}} <button class="btn btn-success" ng-click="controller.deleteWork(work.id)">Delete</button></li>
+                    </ul>-->
+                </div>
+                <div class="col-md-6">
+                    <table>
+                        <tr>
+                            <th class="text-center"><h3>Search</h3></th>
+                        </tr>
+                        <tr ng-repeat="work in controller.works">
+                            <td>{{work.title}}</td>
+                            <td><button class="btn btn-success" ng-click="controller.searchTitle(work.id)">Search</button></td>
+                        </tr>
+                    </table>
+                    <!--<ul class="list-unstyled">
+                        <li ng-repeat="work in controller.works|filter:search">{{work.title}} <button class="btn btn-success" ng-click="controller.searchTitle(work.id)">Search</button></li>
+                    </ul>-->
+                </div>
+            </div>
+        </div>
+</div><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+

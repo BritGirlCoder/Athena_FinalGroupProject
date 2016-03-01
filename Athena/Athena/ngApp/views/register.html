@@ -1,0 +1,58 @@
+﻿<div class="register">
+    <center><h1>Register</h1><br /><br />
+        
+        <ul>
+            <li ng-repeat="error in controller.validationMessages">
+                {{error}}
+            </li>
+        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form id="Rform" ng-submit="controller.register()" class="pure-form pure-form-aligned">
+                            <div class="pure-control-group">
+                                <label>First Name:</label>
+                                <input class="form-control form-control-lg" type="text" placeholder="First Name">
+                                <br />
+                            </div>
+                            <div class="pure-control-group">
+                                <label>Last Name:</label>
+                                <input class="form-control" type="text" placeholder="Last Name">
+                                <br />
+                            </div>
+                            <div class="pure-control-group">
+                                <label>UserName:</label>
+                                <input class="form-control form-control-sm" ng-model="controller.registerUser.userName" type="text" placeholder="UserName"><br />
+                            </div>
+                            <div class="pure-control-group">
+                                <label>Email:</label>
+                                <input class="form-control" ng-model="controller.registerUser.email" type="text" placeholder="Email"><br />
+                            </div>
+                            <div class="pure-control-group">
+                                <label>Password:</label>
+                                <input class="form-control" ng-model="controller.registerUser.password" type="password" placeholder="Password"><br /><br />
+                            </div>
+                            <div class="pure-control-group">
+                                <label>Confirm Password:</label>
+                                <input class="form-control" ng-model="controller.registerUser.confirmPassword" type="password" placeholder="Password"><br />
+                                <br />
+                            </div>
+                    </form>
+                </div>                
+            
+            
+                    <button type="submit" class="btn btn-success">Submit</button>
+                    
+                </div>
+            </div>
+    </center>
+   </div>
+                
+   
+           
+
+
+
+
+
+

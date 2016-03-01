@@ -1,0 +1,77 @@
+﻿<div class="Cpage">
+    <center>
+        <h1>Content</h1>
+    </center>
+        
+    <h2>{{controller.file.filename}}</h2>
+    
+    <a href="/addToList/{{controller.work.id}}" class="btn btn-success">Add to list</a>
+    
+     <h2>Title</h2>
+    {{controller.work.title}}<br />
+   
+     <h2>Rating</h2>
+     {{controller.work.avgRating}}<br />
+
+    <h2>External Author</h2>
+    {{controller.work.externalAuthor}}<br />
+
+    <h2>Athena Author</h2>
+    <ul>
+        <li ng-repeat="author in controller.work.authors">
+            {{author.userName}}
+        </li>
+    </ul><br />
+
+    <h2>Genre</h2>
+    {{controller.work.genres}}<br />
+
+    <h2>Description</h2>
+    {{controller.work.description}}<br />
+    <br />
+
+    <h2>Publication</h2>
+    <p>Content not visible?  Launch external viewer by clicking below:</p>
+    <!--filepicker viewer button-->
+    <div>
+        <form>
+            <button class="btn btn-success" ng-click="controller.launchViewer()">View Publication</button>
+            <!--<a href="{{controller.work.fileReference}}" class="btn btn-success">Download Publication</a>-->
+        </form>
+    </div>
+
+    <center>
+        <div class="scroll">
+            {{controller.work.content}}
+        </div>
+    </center><br />
+
+
+    <h2>Reviews</h2>
+
+    <a class="btn btn-success" ng-show="controller.isLoggedIn == true" href="/review/{{controller.work.id}}">Write a review</a>
+
+    <div id="reviewDiv" class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <ul class="list-unstyled">
+                <li ng-repeat="review in controller.work.reviews">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-md-4">Review By:  {{review.ownerName}}</div>
+                                <div class="col-md-4"></div>
+                                <div class="col-md-4">Rating:  {{review.score}}</div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <p>{{review.content}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

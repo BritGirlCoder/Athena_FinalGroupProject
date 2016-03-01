@@ -1,0 +1,64 @@
+﻿<div id="search">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <center>
+                    <img src="http://orig13.deviantart.net/2cec/f/2012/297/6/7/sw___owl_silhouette_by_huina-d5itg1o.png" alt="..." height="80" width="80">
+                </center>
+            </div>
+            <div class="col-md-2">
+                <div class="radio" id="Sradio">
+                    <label><input type="radio" name="Story" value="Story" ng-model="controller.query.searchFor" />Stories</label>
+                    <br />
+                    <label><input type="radio" name="Article" value="Article" ng-model="controller.query.searchFor" />Articles</label>
+                </div>
+            </div>
+            
+                <div class="col-md-3">
+                    <button id="Sdropdown" class="btn btn-success btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                        Search By <span style="text-transform: capitalize">{{controller.query.searchBy}}</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="controller.setParams('title')">Title</a></li>
+                        <li><a ng-click="controller.setParams('author')">Author</a></li>
+                        <li><a ng-click="controller.setParams('genre')">Genre</a></li>
+                        <li><a ng-click="controller.setParams('tag')">Tag</a></li>
+                    </ul>
+
+                </div>
+            
+            <div class="col-md-3">
+                <input id="Sbox" typeof="text" ng-model="controller.query.query" ng-model-options="{debounce:1000}" type="text" size="45" value="" placeholder="Search" />
+                <button class="btn btn-success" ng-click="controller.search()">Search</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="ResultsTitle">Results</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div classs="row">
+        <div class="col-md-12">
+            <table id="searchResults">
+                <thead>
+                    <tr>
+                        <th width="40%">Title</th>
+                        <th width="30%">Author</th>
+                        <th width="30%">Genre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="work in controller.results">
+                        <td><a class="links" href="/content/{{work.id}}">{{work.title}}</a></td>
+                        <td><a class="links" href="/content/{{work.id}}" ng-repeat="author in work.authors">{{author.userName}}</a></td>
+                        <td><a class="links" href="/content/{{work.id}}">{{work.genres}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>

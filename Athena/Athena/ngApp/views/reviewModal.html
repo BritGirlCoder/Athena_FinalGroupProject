@@ -1,0 +1,10 @@
+﻿<div class="container-fluid" id="RMdesign">
+    <h2 class="modal-title text-center">Reviewing {{controller.work.title}}</h2>
+
+    <div class="modal-body text-center">
+        <textarea cols="70" rows="10" ng-model="controller.review.content"></textarea><br /><br />
+        <button type="button" class="btn btn-success" ng-click="controller.saveReview()">Save Changes</button>
+        <button type="button" class="btn btn-success" ng-click="controller.closeModal()">Cancel</button>
+    </div>
+</div>
+

@@ -1,0 +1,85 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" ng-app="MyApp">
+<head>
+    <title>Athena</title>
+    <base href="/" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-cloak>
+    <div ng-controller="NavController as nav">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4">
+                    <h1 id="mainTitle"><img id="owl" src="http://www.clipartbest.com/cliparts/7Ta/64r/7Ta64rBTA.jpeg" height="50" width="50"> Athena <img src="http://www.clipartbest.com/cliparts/7Ta/64r/7Ta64rBTA.jpeg" height="50" width="50"></h1>
+                </div>
+
+                <div class="col-md-4">
+                    <div ng-show="nav.isLoggedIn">
+                        <div class="dropdown">
+                            <button class="btn btn-success btn-sm pull-right">{{nav.userName}}</button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/profile/{{nav.userId}}">Account</a></li>
+                                <li ng-show="nav.isAdmin"><a href="/admin">Admin</a></li>
+                                <li><a href="/publish">Publish</a></li>
+                                <li ng-click="nav.logout()"><a href="#">Log Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div ng-show="!nav.isLoggedIn">
+                        <a class="btn btn-success btn-sm pull-right" href="/login">Log In</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="Header">
+            <div class="Header-Content">
+                <nav class="navbar navbar-inverse">
+                    <div class="container">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/profile">Account</a></li>
+                            <li><a href="/search">Search</a></li>
+                            <li><a href="/about">About Us/Contact </a></li>
+                            @*<li ng-show="nav.isAdmin"><a href="/admin">Admin</a></li>*@
+                            @*<li><a href="/login">Log In</a></li>*@
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <ng-view></ng-view>
+
+    <footer> © 2016 Athena</footer>
+
+
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/jquery-2.1.4.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
+    @*<script type="text/javascript" src="//api.filepicker.io/v2/filepicker.js"></script>*@
+    <script src="~/Scripts/angular_filepicker.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="~/master.js"></script>
+    @*<script src="/ngApp/app.js"></script>
+        <script src="/ngApp/controllers.js"></script>*@
+
+</body>
+</html>

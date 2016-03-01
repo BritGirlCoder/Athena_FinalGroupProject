@@ -1,0 +1,64 @@
+﻿<div class="container1">
+    <div class="row">
+
+        <div id="PC2" class="col-lg-6">
+            <form name="publishForm" novalidate>
+                <div class="form-group">
+                    <h3>Ready to publish?  Add your work below</h3>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">No file to upload? Copy &amp; paste your work in the textbox below:</label>
+                    <textarea class="form-control" rows="10" ng-model="controller.workToAdd.content" name="workContent" placeholder="Add your plain text story or article here"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Have a file to upload? Upload your file here:</label>
+                    <button ng-click="controller.pickFile()" class="btn btn-success btn-lg">Click to upload</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="PC" class="col-lg-6">
+            <form name="publishForm" novalidate>
+                <div class="form-group">
+                    <label class="text-info">Title:</label>
+                    <input type="text" class="form-control" ng-model="controller.workToAdd.title" placeholder="Title" />
+                </div>
+                <!--<div class="form-group">                   
+                    <label class="text-info">Search for Additional Authors:</label>
+                    <input type="text" class="form-control" placeholder="Enter username of additional authors" /><br />
+                    <button ng-click="controller.searchAuthors()" class="btn btn-success btn-lg">Search Athena members</button>
+                </div>-->
+                <div class="form-group">
+                    <label class="text-info">Description:</label>
+                    <textarea rows="5" class="form-control" ng-model="controller.workToAdd.description" placeholder="Description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="text-info">Select a genre:</label>
+                    <div ng-repeat="genre in controller.listWorkGenres">
+                        <div class="checkbox">
+                            <input type="checkbox" value="{{genre}}" ng-checked="selection.indexOf(genre) > -1" ng-click="controller.toggleSelection(genre)" />
+                            <label for="{{genre}}">{{genre}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Select a Type:</label>
+                    <select class="form-control" name="workType"
+                            ng-model="controller.selectedType"
+                            ng-change="controller.populateWorkWithType()">
+                        <option ng-repeat="type in controller.listWorkTypes" value="{{type.name}}">{{type.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="text-info">Add tags:</label>
+                    <textarea rows="5" class="form-control" ng-model="controller.enteredTags" placeholder="Separate each tag with a comma"></textarea>
+                </div>
+                <div class="form-group">
+                    <button ng-click="controller.addWork()" class="btn btn-success bth btn-lg">Submit your work</button>
+                </div>
+            </form>
+        </div>
+   </div>
+  </div>
+    

@@ -1,0 +1,76 @@
+﻿<div class="container-fluid" id="PPdesign">
+    <div class="row">
+        <div class="col-md-6">
+            <!--List of my reviews-->
+            <table class="table table-responsive table-bordered">
+                <tr>
+                    <th colspan="3" class="text-center">
+                        My reviews
+                    </th>
+                </tr>
+                <tr ng-repeat="review in controller.reviews">
+                    <td>{{review.content}}</td>
+                    <td><button class="btn btn-success" ng-click="controller.editUserReview(review)">Edit Review</button></td>
+                    <td><button class="btn btn-success" ng-click="controller.deleteUserReview(review.id)">Delete Review</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <!--list of my works-->
+            <table class="table table-responsive table-bordered">
+                <tr>
+                    <th colspan="2" class="text-center">
+                        My works
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="btn btn-success" ng-click="controller.addUserWorks()">Add Work</button></td>
+                </tr>
+                <tr ng-repeat="work in controller.works">
+                    <td>{{work.title}}</td>
+                    <td><button class="btn btn-success" ng-click="controller.deleteUserWorks(work.id)">Delete Work</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <!--List of my read works-->
+            <table class="table table-responsive table-bordered">
+                <tr>
+                    <th colspan="2" class="text-center">
+                        Publications I've read
+                    </th>
+                </tr>
+                <tr>
+                    <td colspan="2"><button class="btn btn-success" ng-click="controller.searchRedirect()">Add to List</button></td>
+                </tr>
+                <tr ng-repeat="read in controller.readWorks">
+                    <td>{{read.title}}</td>
+                    <td><button class="btn btn-success" ng-click="controller.deleteRead(read)">Remove from List</button></td>
+                </tr>
+            </table>
+        </div>
+        <!--<div class="col-md-6">
+            --List of my favorite genres--
+            <table class="table table-responsive table-bordered">
+                <tr>
+                    <th colspan="3" class="text-center">
+                        My favorite genres
+                    </th>
+                </tr>
+                <tr ng-repeat="genre in controller.genres">
+                    --Shows list of favorite genres--
+                    <td>{{genre}}</td>
+                    --Show list of genres--
+                    <td><button class="btn btn-success" ng-click="controller.showGenres()">Edit</button></td>
+                    <td ng-show="showGenres" ng-repeat="genreSelect in controller.listOfGenres">
+                        <input type="checkbox" value="{{genreSelect}}" ng-checked="selection.indexOf(genreSelect) > -1" ng-click="controller.toggleSelection(genreSelect)" />
+                        <label for="{{genreSelect}}">{{genreSelect}}</label>
+                    </td>
+                </tr>
+            </table>        
+        </div>-->
+    </div>
+</div>

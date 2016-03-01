@@ -1,0 +1,28 @@
+﻿<div id="ATLdesign">
+
+    <h1>Adding {{controller.work.title}}</h1>
+
+    <h3>Select rating:</h3>
+    <select id="rating" ng-model="controller.rating.score">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+    </select>
+
+    <input type="button" value="Submit" class="btn btn-success" ng-click="controller.submit()" />
+
+    <h3>{{controller.result}}</h3>
+
+    <a id="ATLlinks" href="/profile/">View your list</a>
+    <br />
+    <a id="ATLlinks" href="/content/{{controller.work.id}}">Return to content page</a>
+
+</div>
+
